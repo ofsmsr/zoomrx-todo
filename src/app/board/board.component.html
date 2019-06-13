@@ -1,0 +1,24 @@
+<mat-card
+  cdkDropList
+  class="board-layout"
+  cdkDropListOrientation="horizontal"
+  (cdkDropListDropped)="drop($event)">
+  <div>
+    {{boardDetails.boardName}} 
+
+    <mat-chip-list class="delete-list">
+      <mat-chip class="c-pointer" (click)="onDeleteBoard()">Delete this Board</mat-chip>
+    </mat-chip-list>
+  </div>
+
+  <div *ngFor="let list of boardDetails.boardList; index as lIndex" cdkDrag>
+    <app-list 
+      [listDetails]="list"
+      [boardIndex]="boardIndex"
+      [listIndex]="lIndex">
+    </app-list>
+  </div>
+
+  <button mat-stroked-button class="margin-top-1" color="primary" (click)="onAddList()">Add New List</button>
+
+</mat-card>

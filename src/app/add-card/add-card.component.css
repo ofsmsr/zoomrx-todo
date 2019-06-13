@@ -1,0 +1,9 @@
+.comments-layout {
+    margin-top: 1%;
+}
+
+.comments-layout > span {
+    display: inline-block;
+    margin-top: 1%;
+    width: 25%;
+}

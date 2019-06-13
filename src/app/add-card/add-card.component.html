@@ -1,0 +1,34 @@
+<form #cardForm="ngForm">
+  <mat-form-field class="ctrl-width">
+    <input matInput [(ngModel)]="cardDetails.cardTitle" name="cardTitle" placeholder="Card Title" required/>
+  </mat-form-field>
+
+  <button *ngIf="isShowDelete()" mat-raised-button type="button" class="pull-right" (click)="onDeleteCard()">Delete Card</button> 
+
+  <mat-form-field class="ctrl-width">
+    <textarea matInput [(ngModel)]="cardDetails.cardDesc" name="cardDesc" placeholder="Card Description" required></textarea>
+  </mat-form-field>
+
+  <mat-form-field class="ctrl-width">
+    <textarea matInput [(ngModel)]="cardDetails.currentComment" name="currentComment" placeholder="Comments"></textarea>
+  </mat-form-field>
+
+  <div>
+    <button [disabled]="!cardDetails?.currentComment?.length" mat-raised-button type="button" (click)="onAddComment()">Add Comments</button> 
+  </div>
+
+  <div *ngIf="cardDetails?.cardComments?.length" class="comments-layout">
+    <span><strong>Comment</strong></span>
+    <span><strong>Date</strong></span>
+  </div>
+
+  <div *ngFor="let comment of cardDetails?.cardComments?.slice().reverse()" class="comments-layout">
+    <span>{{comment.text}}</span>
+    <span>{{comment.date | date:'dd MMM yyyy hh:mm:ss'}}</span>
+  </div>
+
+  <div mat-dialog-actions class="pull-right">
+    <button mat-raised-button (click)="onCancel()">Cancel</button>
+    <button [disabled]="cardForm.invalid" mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
+  </div>
+</form>

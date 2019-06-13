@@ -1,0 +1,17 @@
+.card-layout {
+    border-radius: 20px;
+    margin-top: 5%;
+    padding: 1%;
+    width: 96%;
+    height: 100px;
+}
+
+.edit-card {
+    float: right;
+    position: relative;
+    top: 8%;
+}
+
+.ctd-text {
+    margin: 3%;
+}

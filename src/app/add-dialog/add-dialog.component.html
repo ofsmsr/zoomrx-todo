@@ -1,0 +1,10 @@
+<form #dialogForm="ngForm">
+  <mat-form-field class="ctrl-width-full">
+    <input type="text" matInput [(ngModel)]="details.title" name="title" placeholder="Title" required/>
+  </mat-form-field>
+
+  <div mat-dialog-actions class="pull-right">
+    <button mat-raised-button (click)="onCancel()">Cancel</button>
+    <button [disabled]="dialogForm.invalid" mat-raised-button color="primary" [mat-dialog-close]="details.title">Submit</button>
+  </div>
+</form>

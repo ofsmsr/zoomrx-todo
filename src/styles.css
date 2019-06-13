@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.pull-right {
+    float: right;
+}
+
+.c-pointer {
+    cursor: pointer !important;
+}
+
+.margin-top-1 {
+    margin-top: 1% !important;
+}
+
+.margin-top-5 {
+    margin-top: 5% !important;
+}
+
+.ctrl-width {
+    width: 70%;
+}
+
+.ctrl-width-full {
+    width: 100%;
+}
+
+.cancel {
+    margin-right: 25px !important;
+}
+
+.delete-list {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}

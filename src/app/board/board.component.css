@@ -1,0 +1,8 @@
+.board-layout {
+    border-radius: 20px;
+    float: left;
+    margin-top: 2%;
+    margin-left: 5%;
+    padding: 1%;
+    width: 90%;
+}
